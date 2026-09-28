@@ -1,0 +1,344 @@
+/* PALETA DE COLOR PRINCIPAL*/
+    :root {
+      --rojo: #9f2f27;
+      --arena: #ead7b7;
+      --blanco: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--blanco);
+      color: var(--rojo);
+      line-height: 1.5;
+    }
+
+    header {
+      background: var(--rojo);
+      color: var(--blanco);
+      padding: 20px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 4px 14px rgba(159, 47, 39, 0.20);
+    }
+
+    .marca {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .marca-icono {
+      font-size: 38px;
+    }
+
+    .marca h1 {
+      font-size: 30px;
+      line-height: 1.1;
+    }
+
+    .marca p {
+      margin-top: 4px;
+      font-size: 14px;
+    }
+
+    nav {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--blanco);
+      text-decoration: none;
+      padding: 9px 12px;
+      border-radius: 8px;
+      font-weight: bold;
+      border: 1px solid transparent;
+    }
+
+    nav a:hover {
+      border-color: var(--arena);
+      background: rgba(234, 215, 183, 0.14);
+    }
+
+    main {
+      width: min(1180px, 92%);
+      margin: 28px auto 50px;
+    }
+
+    .titulo-seccion {
+      margin-bottom: 16px;
+      font-size: 24px;
+    }
+
+    .tarjeta {
+      background: var(--blanco);
+      border: 1px solid var(--arena);
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: 0 6px 18px rgba(159, 47, 39, 0.10);
+    }
+
+    .tarjeta h2,
+    .tarjeta h3 {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 11px 12px;
+      border: 1px solid var(--arena);
+      border-radius: 8px;
+      background: var(--blanco);
+      color: var(--rojo);
+      outline: none;
+      font-size: 14px;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: var(--rojo);
+      box-shadow: 0 0 0 3px rgba(159, 47, 39, 0.10);
+    }
+
+    .campo {
+      margin-bottom: 14px;
+    }
+
+    .boton {
+      border: none;
+      border-radius: 8px;
+      padding: 11px 16px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .boton-principal {
+      width: 100%;
+      background: var(--rojo);
+      color: var(--blanco);
+    }
+
+    .boton-principal:hover {
+      opacity: 0.9;
+    }
+
+    .mensaje {
+      display: none;
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      background: var(--arena);
+      color: var(--rojo);
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .mensaje.visible {
+      display: block;
+    }
+
+    /* ZONA DE ACCESO */
+    .zona-acceso {
+      display: grid;
+      grid-template-columns: 0.9fr 1.5fr;
+      gap: 20px;
+      align-items: start;
+      margin-bottom: 32px;
+    }
+
+    .registro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 14px;
+    }
+
+    .registro-grid .ancho-completo {
+      grid-column: 1 / -1;
+    }
+
+    .nota {
+      margin-top: 10px;
+      font-size: 12px;
+      opacity: 0.85;
+    }
+
+    /* PANEL PRINCIPAL */
+    .panel {
+      margin-top: 22px;
+    }
+
+    .resumen {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 26px;
+    }
+
+    .dato {
+      background: var(--arena);
+      border-radius: 12px;
+      padding: 18px;
+      border: 1px solid var(--rojo);
+    }
+
+    .dato .numero {
+      font-size: 28px;
+      font-weight: bold;
+      display: block;
+    }
+
+    .dato small {
+      display: block;
+      margin-top: 4px;
+    }
+
+    /* CATÁLOGO */
+    .catalogo-cabecera {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .catalogo-acciones {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .catalogo-acciones input {
+      min-width: 230px;
+    }
+
+    .boton-secundario {
+      background: var(--rojo);
+      color: var(--blanco);
+      white-space: nowrap;
+    }
+
+    .tabla-contenedor {
+      width: 100%;
+      overflow-x: auto;
+      border-radius: 10px;
+      border: 1px solid var(--arena);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 820px;
+    }
+
+    th {
+      background: var(--arena);
+      text-align: left;
+      padding: 12px;
+      font-size: 14px;
+    }
+
+    td {
+      padding: 12px;
+      border-top: 1px solid var(--arena);
+      font-size: 14px;
+    }
+
+    .estado {
+      display: inline-block;
+      padding: 5px 9px;
+      border-radius: 999px;
+      border: 1px solid var(--rojo);
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .estado.prestado {
+      background: var(--arena);
+    }
+
+    .accion {
+      background: var(--blanco);
+      color: var(--rojo);
+      border: 1px solid var(--rojo);
+      padding: 7px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .accion:hover {
+      background: var(--arena);
+    }
+
+    footer {
+      text-align: center;
+      background: var(--arena);
+      color: var(--rojo);
+      padding: 18px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      .zona-acceso {
+        grid-template-columns: 1fr;
+      }
+
+      .resumen {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      header {
+        position: static;
+      }
+
+      .marca h1 {
+        font-size: 24px;
+      }
+
+      .registro-grid,
+      .resumen {
+        grid-template-columns: 1fr;
+      }
+
+      .registro-grid .ancho-completo {
+        grid-column: auto;
+      }
+
+      .catalogo-acciones {
+        width: 100%;
+        flex-direction: column;
+      }
+
+      .catalogo-acciones input,
+      .catalogo-acciones button {
+        width: 100%;
+      }
+    }

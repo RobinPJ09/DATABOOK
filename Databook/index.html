@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DATABOOK | Prototipo de gestión de biblioteca</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+
+<body>
+  <!-- ENCABEZADO Y MENÚ -->
+  <header>
+    <div class="marca">
+      <div class="marca-icono">📖</div>
+      <div>
+        <h1>DATABOOK</h1>
+        <p>Prototipo de gestión para un biblioteca</p>
+      </div>
+    </div>
+
+    <nav aria-label="Menú principal">
+      <a href="#inicio">Inicio</a>
+      <a href="#catalogo">Libros</a>
+      <a href="#registro">Usuarios</a>
+      <a href="#panel">Préstamos</a>
+      <a href="#panel">Reportes</a>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <!-- INICIO DE SESIÓN Y REGISTRO -->
+    <section class="zona-acceso" aria-label="Acceso y registro">
+      <article class="tarjeta">
+        <h2>🔒 Iniciar sesión</h2>
+
+        <form id="formLogin" novalidate>
+          <div class="campo">
+            <label for="loginUsuario">Correo o usuario</label>
+            <input id="loginUsuario" type="text" placeholder="ejemplo@correo.com" />
+          </div>
+
+          <div class="campo">
+            <label for="loginClave">Contraseña</label>
+            <input id="loginClave" type="password" placeholder="Ingrese su contraseña" />
+          </div>
+
+          <button class="boton boton-principal" type="submit">Ingresar</button>
+
+          <div id="mensajeLogin" class="mensaje" role="alert"></div>
+        </form>
+      </article>
+
+      <article class="tarjeta" id="registro">
+        <h2>👤 Registrar nuevo usuario</h2>
+
+        <form id="formRegistro" class="registro-grid" novalidate>
+          <div class="campo">
+            <label for="nombres">Nombres</label>
+            <input id="nombres" type="text" placeholder="Robinson" />
+          </div>
+
+          <div class="campo">
+            <label for="apellidos">Apellidos</label>
+            <input id="apellidos" type="text" placeholder="Palacio Jimenez" />
+          </div>
+
+          <div class="campo">
+            <label for="cedula">Cédula</label>
+            <input id="cedula" type="text" inputmode="numeric" placeholder="1234567890" />
+          </div>
+
+          <div class="campo">
+            <label for="fechaNacimiento">Fecha de nacimiento</label>
+            <input id="fechaNacimiento" type="date" />
+          </div>
+
+          <div class="campo">
+            <label for="correo">Correo</label>
+            <input id="correo" type="email" placeholder="usuario@correo.com" />
+          </div>
+
+          <div class="campo">
+            <label for="clave">Contraseña</label>
+            <input id="clave" type="password" placeholder="Mínimo 6 caracteres" />
+          </div>
+
+          <div class="ancho-completo">
+            <button class="boton boton-principal" type="submit">Registrar usuario</button>
+            <div id="mensajeRegistro" class="mensaje" role="alert"></div>
+          </div>
+        </form>
+      </article>
+    </section>
+
+    <!-- PANEL PRINCIPAL -->
+    <section class="panel" id="panel">
+      <h2 class="titulo-seccion">Panel de gestión de biblioteca</h2>
+
+      <div class="resumen">
+        <article class="dato">
+          <span class="numero">1.245</span>
+          <strong>📚 Libros registrados</strong>
+          <small>Total en la biblioteca</small>
+        </article>
+
+        <article class="dato">
+          <span class="numero">356</span>
+          <strong>👥 Usuarios activos</strong>
+          <small>Usuarios registrados</small>
+        </article>
+
+        <article class="dato">
+          <span class="numero">89</span>
+          <strong>🔄 Préstamos</strong>
+          <small>Préstamos actuales</small>
+        </article>
+
+        <article class="dato">
+          <span class="numero">72</span>
+          <strong>↩️ Devoluciones</strong>
+          <small>Registradas este mes</small>
+        </article>
+      </div>
+    </section>
+
+    <!-- CATÁLOGO DE LIBROS -->
+    <section class="tarjeta" id="catalogo">
+      <div class="catalogo-cabecera">
+        <h2>📚 Catálogo de libros</h2>
+
+        <div class="catalogo-acciones">
+          <input id="buscador" type="search" placeholder="Buscar libro..." aria-label="Buscar libro" />
+          <button id="nuevoLibro" class="boton boton-secundario" type="button">+ Nuevo libro</button>
+        </div>
+      </div>
+
+      <div class="tabla-contenedor">
+        <table>
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Título</th>
+              <th>Autor</th>
+              <th>Categoría</th>
+              <th>Estado</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+
+          <tbody id="tablaLibros">
+            <tr>
+              <td>LIB-0001</td>
+              <td>Cien años de soledad</td>
+              <td>Gabriel García Márquez</td>
+              <td>Novela</td>
+              <td><span class="estado">Disponible</span></td>
+              <td><button class="accion" type="button">Ver detalles</button></td>
+            </tr>
+
+            <tr>
+              <td>LIB-0002</td>
+              <td>El principito</td>
+              <td>Antoine de Saint-Exupéry</td>
+              <td>Infantil</td>
+              <td><span class="estado">Disponible</span></td>
+              <td><button class="accion" type="button">Ver detalles</button></td>
+            </tr>
+
+            <tr>
+              <td>LIB-0003</td>
+              <td>1984</td>
+              <td>George Orwell</td>
+              <td>Ciencia ficción</td>
+              <td><span class="estado prestado">Prestado</span></td>
+              <td><button class="accion" type="button">Ver detalles</button></td>
+            </tr>
+
+            <tr>
+              <td>LIB-0004</td>
+              <td>Don Quijote de la Mancha</td>
+              <td>Miguel de Cervantes</td>
+              <td>Clásico</td>
+              <td><span class="estado">Disponible</span></td>
+              <td><button class="accion" type="button">Ver detalles</button></td>
+            </tr>
+
+            <tr>
+              <td>LIB-0005</td>
+              <td>El código Da Vinci</td>
+              <td>Dan Brown</td>
+              <td>Misterio</td>
+              <td><span class="estado prestado">Prestado</span></td>
+              <td><button class="accion" type="button">Ver detalles</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="mensajeCatalogo" class="mensaje" role="status"></div>
+    </section>
+  </main>
+
+  <footer>
+    DATABOOK· Prototipo de gestión de biblioteca
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+</html>
